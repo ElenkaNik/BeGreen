@@ -1,0 +1,1 @@
+$("#preloaderKDZ").delay(50).fadeOut(950);
