@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Products Grid 4 Columns</title>
+    <title>BeGreen!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -17,16 +17,6 @@
     <!-- Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.min.css">
-
-
-    <link rel="stylesheet" type="text/css" href="libs/animate/animated.css">
-    <link rel="stylesheet" type="text/css" href="libs/owl.carousel.min/owl.carousel.min.css">
-    <link rel="stylesheet" type="text/css" href="libs/jquery.mmenu.all/jquery.mmenu.all.css">
-    <link rel="stylesheet" type="text/css" href="libs/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
-    <link rel="stylesheet" type="text/css" href="libs/direction/css/noJS.css">
-    <link rel="stylesheet" type="text/css" href="libs/prettyphoto-master/css/prettyPhoto.css">
-    <link rel="stylesheet" type="text/css" href="libs/slick-sider/slick.min.css">
-    <link rel="stylesheet" type="text/css" href="libs/countdown-timer/css/demo.css">
 
     <!-- Template CSS-->
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -42,6 +32,7 @@
   </head>
   <body class="products products-grid-4-columns">
     <div id="preloaderKDZ"></div>
+
     <div class="yolo-site">
       <header class="header yolo-header-style-10">
         <div class="yolo-top-bar">
@@ -82,16 +73,6 @@
               <div class="shopping-cart-wrapper header-customize-item with-price">
                 <div class="widget_shopping_cart_content">
                   <div class="widget_shopping_cart_icon"><i class="wicon fa fa-shopping-bag"></i><span class="total">0</span></div>
-                  <div class="cart_list_wrapper">
-                    <div class="scroll-wrapper cart_list product_list_widget scrollbar-inner">
-                      <ul class="cart_list product_list_widget scrollbar-inner scroll-content">
-                        <li class="empty">
-                          <h4>An empty cart</h4>
-                          <p>You have no item in your shopping cart</p>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -309,14 +290,6 @@
                   <div class="widget_shopping_cart_content">
                     <div class="widget_shopping_cart_icon"><i class="wicon fa fa-shopping-bag"></i><span class="total">0</span></div>
                     <div class="cart_list_wrapper">
-                      <div class="scroll-wrapper cart_list product_list_widget scrollbar-inner">
-                        <ul class="cart_list product_list_widget scrollbar-inner scroll-content">
-                          <li class="empty">
-                            <h4>An empty cart</h4>
-                            <p>You have no item in your shopping cart</p>
-                          </li>
-                        </ul>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -416,28 +389,61 @@
       <button type="button" class="sn-btn sn-btn-style-17 sn-back-to-top fixed-right-bottom"><i class="btn-icon fa fa-angle-up"></i></button>
     </div>
 
+    <div id="productDescriptionModal" class="div-box mb mt modal" role="article">
+      <div class="container">
+        <div class="row" style="background: lightgray">
+          <div class="col-md-5">
+            <div class="single-product-slider">
+              <div id="sync1">
+                <img id="productDescriptionImage" src="" alt="slide" width="1080" height="768"/>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="single-product-content">
+              <div class="summary-product entry-summary">
+                <h2 id="productDescriptionHeader" class="product_title mb-45"></h2>
+                <div>
+                  <p class="price"><span class="product-begreen-price-amount amount"><span class="product-begreen-price-currencysymbol">$</span>
+                        <span id="productDescriptionPrice"></span></span></p>
+                </div>
+                <div class="product-single-short-description" id="productDescriptionText">
+
+                </div>
+                <form class="cart">
+                  <div class="quantity">
+                    <label>Quantity:</label>
+                    <div class="quantity-inner">
+                      <input step="1" min="1" name="quantity" value="1" title="Qty" size="4" type="number" class="input-text qty text"/>
+                    </div>
+                  </div>
+                  <button type="submit" class="single_add_to_cart_button button alt">Add to cart</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form class="cart-form modal" style="background: lightgray">
+      <table>
+      </table>
+      <div class="button-cart">
+        <div class="button-cart-left"></div>
+        <div class="button-cart-right"><a href="#" class="process">Proceed to Checkout</a></div>
+      </div>
+    </form>
+
     <!-- Vendor jQuery-->
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="node_modules/popper.js/dist/popper.js"></script>
     <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="node_modules/isotope-layout/dist/isotope.pkgd.min.js"></script>
+
+    <script type="text/javascript" src="js/cart.js"></script>
     <script type="text/javascript" src="js/products.js"></script>
+    <script type="text/javascript" src="js/modals.js"></script>
     <script type="text/javascript" src="js/thumbnails.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-
-
-    <script type="text/javascript" src="libs/animate/wow.min.js"></script>
-    <script type="text/javascript" src="libs/jquery.mmenu.all/jquery.mmenu.all.min.js"></script>
-    <script type="text/javascript" src="libs/countdown/jquery.countdown.min.js"></script>
-    <script type="text/javascript" src="libs/jquery-appear/jquery.appear.min.js"></script>
-    <script type="text/javascript" src="libs/jquery-countto/jquery.countTo.min.js"></script>
-    <script type="text/javascript" src="libs/direction/js/jquery.hoverdir.js"></script>
-    <script type="text/javascript" src="libs/direction/js/modernizr.custom.97074.js"></script>
-    <script type="text/javascript" src="libs/mansory/mansory.js"></script>
-    <script type="text/javascript" src="libs/prettyphoto-master/js/jquery.prettyPhoto.js"></script>
-    <script type="text/javascript" src="libs/slick-sider/slick.min.js"></script>
-    <script type="text/javascript" src="libs/countdown-timer/js/jquery.final-countdown.min.js"></script>
-    <script type="text/javascript" src="libs/countdown-timer/js/kinetic.js"></script>
-    <script type="text/javascript" src="libs/owl.carousel.min/owl.carousel.min.js"></script>
   </body>
 </html>

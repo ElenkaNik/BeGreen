@@ -5,8 +5,8 @@ function createThumbnails(products) {
         container.append(thumbnail);
     }
 
-    container.isotope({
-        itemSelector: '.element-item',
+    $('.grid').isotope({
+        itemSelector: '.product-item-wrap',
         layoutMode: 'masonry'
     });
 }
@@ -27,6 +27,8 @@ function createProductThumbnail(product) {
 
     let productLink = $('<a href="#"></a>');
     productLink.addClass('product-link');
+    productLink.attr('productId', product.id);
+    productLink.on('click', onProductClicked);
     productLink.append(productHoverSign);
 
     let starRating = createStarRating(product.rating);
@@ -45,11 +47,14 @@ function createProductThumbnail(product) {
 
     let faCartPlus = $('<i></i>');
     faCartPlus.addClass('fa fa-cart-plus');
+    faCartPlus.attr('productId', product.id);
 
     let addToCartButton = $('<a href="#"></a>');
     addToCartButton.addClass('add_to_cart_button');
     addToCartButton.text('Add to cart');
     addToCartButton.append(faCartPlus);
+    addToCartButton.attr('productId', product.id);
+    addToCartButton.on('click', onAddToCartThumbnailClicked);
 
     let addToCartWrap = $('<div></div>');
     addToCartWrap.addClass('add-to-cart-wrap');
@@ -118,4 +123,10 @@ function createPrice(price) {
     priceSpan.append(amount);
 
     return priceSpan;
+}
+
+function onAddToCartThumbnailClicked(e) {
+    e.preventDefault();
+    let id = $(e.target).attr('productId');
+    increaseAmount(id);
 }
