@@ -48,14 +48,13 @@ function findItem(id) {
 }
 
 function saveCart() {
-    const json = JSON.stringify([cart]);
+    const json = JSON.stringify(cart);
     localStorage.setItem("cart", json);
-    updateTotal();
     prepareCart();
 }
 
 function loadCart() {
-    localStorage.removeItem("cart");
+//    localStorage.removeItem("cart");
     const json = localStorage.getItem("cart");
     if (json === null) {
         return [];

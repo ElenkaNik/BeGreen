@@ -72,6 +72,7 @@ function onRemoveClicked(e) {
 }
 
 function prepareCart() {
+    updateTotal();
     cartTable.empty();
 
     let header = $("<tr></tr>");
