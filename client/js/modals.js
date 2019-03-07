@@ -8,11 +8,7 @@ cartButton.on('click', (e) => {
 });
 
 $('.process').on('click', () => {
-    console.log("You ordered:");
-    for (item of cart)
-        console.log('Item ID ' + item[0] + ', quantity ' + item[1]);
-    {
-}
+    sendOrder(cart);
 });
 
 // При загрузке невидимое модальное окно почему-то перекрывает страницу
